@@ -1,7 +1,9 @@
 #!/usr/bin/env ruby
 
 require "bundler/setup"
-require "daily_surfing"
+require_relative "../lib/daily_surfing/scraper"
+require_relative "../lib/daily_surfing/surf_data"
+require_relative "../lib/daily_surfing/cli"
 
 # You can add fixtures and/or initialization code here to make experimenting
 # with your gem easier. You can also use a different console, if you like.
@@ -10,7 +12,7 @@ require "daily_surfing"
 # require "pry"
 # Pry.start
 
-DailySurfing::Cli.new
+Cli.new
 
 require "irb"
 IRB.start(__FILE__)

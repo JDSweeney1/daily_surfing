@@ -1,9 +1,7 @@
 require 'pry'
 require 'nokogiri'
 require 'open-uri'
+require 'require_all'
 
 
-require_relative '../lib/daily_surfing/scraper.rb'
-require_relative '../lib/daily_surfing/surf_data.rb'
-require_relative '../lib/daily_surfing/cli.rb'
-require_relative '../lib/daily_surfing/version.rb'
+require_all '../lib/daily_surfing'

@@ -1,3 +1,6 @@
+require_relative "scraper"
+require_relative "cli"
+require_relative "version"
 
 class Surf_Data
   attr_accessor :name
