@@ -1,6 +1,4 @@
-require_relative "scraper"
-require_relative "surf_data"
-require_relative "version"
+
 
 class Cli
 
