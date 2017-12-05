@@ -1,4 +1,5 @@
-class DailySurfing::Cli
+rewquire_relative '../config/environment'
+class Cli
 
   @@class = []
 
@@ -6,7 +7,7 @@ class DailySurfing::Cli
     @@class << self
     puts "#{@@class}"
     #testing
-    
+
 
   end
 end
