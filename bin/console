@@ -10,5 +10,7 @@ require "daily_surfing"
 # require "pry"
 # Pry.start
 
+DailySurfing::Cli.new
+
 require "irb"
 IRB.start(__FILE__)

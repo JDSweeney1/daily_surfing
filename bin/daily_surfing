@@ -1,3 +1,4 @@
 #!/usr/bin/env ruby
 
-puts "Hello World"
+
+require_relative "../lib/daily_surfing.rb"
