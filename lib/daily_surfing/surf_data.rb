@@ -10,8 +10,4 @@ class Surf_Data
   @wind = wind
   @weather = weather
   end
-
-  def self.full_report(name = nil, date = nil, condition = nil, wave_height = nil, wind = nil, weather = nil)
-    self.new(name, date, condition, wave_height, wind, weather)
-  end
 end

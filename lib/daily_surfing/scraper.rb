@@ -35,10 +35,6 @@ class Scraper
 
   def self.north_florida
     #I want this to scrape one of four pages, each used for a different region.
-    #fake surf_data
-    #open html and nokogiri go here
-    self.new("url")
-
     scraper = self.new("url")
     Surf_Data.new(scraper.name, scraper.date, scraper.condition, scraper.wave_height, scraper.wind, scraper.weather)
 
