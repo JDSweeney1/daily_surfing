@@ -11,14 +11,7 @@ class Surf_Data
   @weather = weather
   end
 
-  def full_report(name = nil, date = nil, condition = nil, wave_height = nil, wind = nil, weather = nil)
+  def self.full_report(name = nil, date = nil, condition = nil, wave_height = nil, wind = nil, weather = nil)
     report = self.new(name, date, condition, wave_height, wind, weather)
-    puts "#{report.name}"
-    puts "#{report.date}"
   end
-
-  def output
-    Scraper.broward_miami_dade
-  end
-
 end

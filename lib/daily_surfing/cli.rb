@@ -47,11 +47,7 @@ class Cli
        #will ask if they want all information or select report
        #will use if statements to deliver report. possible loop until exit to stay in region
        #fake surf_data
-       puts ""
-       puts "here is 4"
-       puts "#{Scraper.broward_miami_dade}"
-       puts "#{Surf_Data.name}"
-       puts "#{Surf_Data.date}"
+
 
      elsif input == "exit"
        exit
@@ -61,5 +57,12 @@ class Cli
        puts "here is wrong"
      end
    end
+
+ end
+
+ def self.output
+  report = Scraper.broward_miami_dade
+   puts "#{report.name}"
+   puts "#{report.wave_height}"
  end
 end
