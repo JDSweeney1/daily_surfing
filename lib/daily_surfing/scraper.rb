@@ -16,7 +16,7 @@ class Scraper
     wind = "LP LP LP"
     weather = "Tornado"
 
-    Surf_Data.new(name, date, condition, wave_height, wind, weather)
+    Surf_Data.full_report(name, date, condition, wave_height, wind, weather)
 
   end
 end
