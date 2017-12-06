@@ -1,6 +1,10 @@
 #!/usr/bin/env ruby
 
 require "bundler/setup"
+require 'open-uri'
+require 'pry'
+require 'nokogiri'
+
 require_relative '../config/environment'
 
 # You can add fixtures and/or initialization code here to make experimenting
@@ -10,7 +14,7 @@ require_relative '../config/environment'
 # require "pry"
 # Pry.start
 
-Cli.run
+Scraper.new("http://www.surfline.com/surf-forecasts/florida/broward---miami-dade_121124/")
 
-require "irb"
-IRB.start(__FILE__)
+#require "irb"
+#IRB.start(__FILE__)
