@@ -16,7 +16,7 @@ class DailySurfing::Cli
        1. North Florida
        2. Central Florida
        3. Treasure Coast - Palm Beach
-       4. Boward - Miami Dade"
+       4. Broward - Miami Dade"
       puts "         -----Type 'exit' to exit-----"
      input = gets.strip
      if input == "all"
