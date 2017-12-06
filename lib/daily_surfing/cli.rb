@@ -1,4 +1,4 @@
-class DailySurfing::Cli
+class Cli
 
   def self.run
     #this is what will be used to run the the Cli
@@ -49,6 +49,10 @@ class DailySurfing::Cli
        #fake surf_data
        puts ""
        puts "here is 4"
+       puts "#{Scraper.broward_miami_dade}"
+       puts "#{Surf_Data.name}"
+       puts "#{Surf_Data.date}"
+
      elsif input == "exit"
        exit
      else
