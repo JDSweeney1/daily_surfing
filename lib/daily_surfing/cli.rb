@@ -18,45 +18,44 @@ class DailySurfing::Cli
        3. Treasure Coast - Palm Beach
        4. Boward - Miami Dade"
       puts "         -----Type 'exit' to exit-----"
-       input = gets.strip
-       if input == "all"
-         #will print out all data for all regions.
-         #insert fake data next
-         puts ""
-         puts "here is all"
-         #will have an ask feature that asks if they want to go back to main menu or exit
-       elsif input == "1"
-         #will ask if they want all information or select report
-         #will use if statements to deliver report. possible loop until exit to stay in region
-         #fake surf_data
-         puts ""
-         puts "here is 1"
-       elsif input == "2"
-         #will ask if they want all information or select report
-         #will use if statements to deliver report. possible loop until exit to stay in region
-         #fake surf_data
-         puts ""
-         puts "here is 2"
-       elsif input == "3"
-         #will ask if they want all information or select report
-         #will use if statements to deliver report. possible loop until exit to stay in region
-         #fake surf_data
-         puts ""
-         puts "here is 3"
-      elsif input == "4"
-         #will ask if they want all information or select report
-         #will use if statements to deliver report. possible loop until exit to stay in region
-         #fake surf_data
-         puts ""
-         puts "here is 4"
-       elsif input == "exit"
-         exit
-       else
-         #have some sort of error message.
-         #restart at top.
-         puts "here is wrong"
-       end
+     input = gets.strip
+     if input == "all"
+       #will print out all data for all regions.
+       #insert fake data next
+       puts ""
+       puts "here is all"
+       #will have an ask feature that asks if they want to go back to main menu or exit
+     elsif input == "1"
+       #will ask if they want all information or select report
+       #will use if statements to deliver report. possible loop until exit to stay in region
+       #fake surf_data
+       puts ""
+       puts "here is 1"
+     elsif input == "2"
+       #will ask if they want all information or select report
+       #will use if statements to deliver report. possible loop until exit to stay in region
+       #fake surf_data
+       puts ""
+       puts "here is 2"
+     elsif input == "3"
+       #will ask if they want all information or select report
+       #will use if statements to deliver report. possible loop until exit to stay in region
+       #fake surf_data
+       puts ""
+       puts "here is 3"
+    elsif input == "4"
+       #will ask if they want all information or select report
+       #will use if statements to deliver report. possible loop until exit to stay in region
+       #fake surf_data
+       puts ""
+       puts "here is 4"
+     elsif input == "exit"
+       exit
+     else
+       #have some sort of error message.
+       #restart at top.
+       puts "here is wrong"
      end
-     #exit
+   end
  end
 end
