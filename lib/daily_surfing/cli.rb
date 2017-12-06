@@ -20,35 +20,23 @@ class Cli
       puts "         -----Type 'exit' to exit-----"
      input = gets.strip
      if input == "all"
-       #will print out all data for all regions.
-       #insert fake data next
+       self.output_north_florida
        puts ""
-       puts "here is all"
+       self.output_cental_florida
+       puts ""
+       self.output_palm_beach
+       puts ""
+       self.output_broward_miami_dade
+       puts ""
        #will have an ask feature that asks if they want to go back to main menu or exit
      elsif input == "1"
-       #will ask if they want all information or select report
-       #will use if statements to deliver report. possible loop until exit to stay in region
-       #fake surf_data
-       puts ""
-       puts "here is 1"
+       self.output_north_florida
      elsif input == "2"
-       #will ask if they want all information or select report
-       #will use if statements to deliver report. possible loop until exit to stay in region
-       #fake surf_data
-       puts ""
-       puts "here is 2"
+        self.output_cental_florida
      elsif input == "3"
-       #will ask if they want all information or select report
-       #will use if statements to deliver report. possible loop until exit to stay in region
-       #fake surf_data
-       puts ""
-       puts "here is 3"
+       self.output_palm_beach
     elsif input == "4"
-       #will ask if they want all information or select report
-       #will use if statements to deliver report. possible loop until exit to stay in region
-       #fake surf_data
-
-
+       self.output_broward_miami_dade
      elsif input == "exit"
        exit
      else
@@ -60,8 +48,26 @@ class Cli
 
  end
 
- def self.output
+ def self.output_broward_miami_dade
   report = Scraper.broward_miami_dade
+   puts "#{report.name}"
+   puts "#{report.wave_height}"
+ end
+
+ def self.output_palm_beach
+  report = Scraper.palm_beach
+   puts "#{report.name}"
+   puts "#{report.wave_height}"
+ end
+
+ def self.output_cental_florida
+  report = Scraper.cental_florida
+   puts "#{report.name}"
+   puts "#{report.wave_height}"
+ end
+
+ def self.output_north_florida
+  report = Scraper.north_florida
    puts "#{report.name}"
    puts "#{report.wave_height}"
  end

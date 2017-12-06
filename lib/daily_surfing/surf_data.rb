@@ -1,5 +1,5 @@
 class Surf_Data
-  attr_accessor :name, :date, :condition, :wave_height, :wind, :weather
+  include Attributes
 
   def initialize(name = nil, date = nil, condition = nil, wave_height = nil, wind = nil, weather = nil)
   #will collect all data(developed by scrape class) to be used in the cli
@@ -12,6 +12,6 @@ class Surf_Data
   end
 
   def self.full_report(name = nil, date = nil, condition = nil, wave_height = nil, wind = nil, weather = nil)
-    report = self.new(name, date, condition, wave_height, wind, weather)
+    self.new(name, date, condition, wave_height, wind, weather)
   end
 end

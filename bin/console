@@ -10,7 +10,7 @@ require_relative '../config/environment'
 # require "pry"
 # Pry.start
 
-Cli.output
+Cli.run
 
 require "irb"
 IRB.start(__FILE__)
