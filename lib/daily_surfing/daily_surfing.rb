@@ -1,0 +1,2 @@
+module DailySurfing
+end

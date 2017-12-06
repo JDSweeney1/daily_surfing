@@ -1,9 +1,7 @@
-#require_relative "cli"
-#require_relative "surf_data"
-#require_relative "version"
-
-class Scraper
+class DailySurfing::Scraper
   def scraper
-    puts "do stuff"
+    #I want this to scrape one of four pages, each used for a different region.
+    #fake surf_data
+
   end
 end
