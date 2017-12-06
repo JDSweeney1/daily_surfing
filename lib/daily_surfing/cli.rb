@@ -15,5 +15,31 @@ class DailySurfing::Cli
      3. Treasure Coast - Palm Beach
      4. Boward - Miami Dade"
 
+     input = gets.strip
+
+     if input == "all"
+       #will print out all data for all regions.
+       #insert fake data next
+     if input == "1"
+       #will ask if they want all information or select report
+       #will use if statements to deliver report. possible loop until exit to stay in region
+       #fake surf_data
+     if input == "1"
+       #will ask if they want all information or select report
+       #will use if statements to deliver report. possible loop until exit to stay in region
+       #fake surf_data
+     if input == "1"
+       #will ask if they want all information or select report
+       #will use if statements to deliver report. possible loop until exit to stay in region
+       #fake surf_data
+     if input == "1"
+       #will ask if they want all information or select report
+       #will use if statements to deliver report. possible loop until exit to stay in region
+       #fake surf_data
+     else
+       #have some sort of error message.
+       #restart at top.
+     end
+
   end
 end
