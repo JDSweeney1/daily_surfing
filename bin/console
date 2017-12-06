@@ -10,7 +10,7 @@ require_relative '../config/environment'
 # require "pry"
 # Pry.start
 
-DailySurfing::Cli.new
+DailySurfing::Cli.run
 
 require "irb"
 IRB.start(__FILE__)
