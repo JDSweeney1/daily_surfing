@@ -36,7 +36,6 @@ class Cli
        puts "I'm sorry, I didn't catch that. Please type all, 1, 2, 3, or 4"
      end
    end
-
  end
 
  def self.output_broward_miami_dade
