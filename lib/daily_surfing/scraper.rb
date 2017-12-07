@@ -18,9 +18,9 @@ class Scraper
     #data[6] = third day  data[7] = brief description data[8] = wind description
     #data[9] = first day weather data[10].gesub('\u00B0', "") = first day temp
 
-    condition = surf_report.css("div.day-slider-container div div strong").collect{|w| w.text}
+    self.condition = surf_report.css("div.day-slider-container div div strong").collect{|w| w.text}
     #condition[0] = day 1 condition[1] = day 2 condition[2] = day 3
-    wave = surf_report.css("div.day-slider-container h1").collect{|h| h.text}
+    self.wave_height = surf_report.css("div.day-slider-container h1").collect{|h| h.text}
 =begin
     ["Wednesday - 12/06",
  "ankle to knee high",
@@ -38,24 +38,23 @@ class Scraper
  "scattered showers",
  "71-82\u00B0 F"]
 =end
-    @date1 = data[0]
-    @date2 = data[3]
-    @date3 = data[6]
-    @condition1 = condition[0]
-    @condition2 = condition[1]
-    @condition3 = condition[0]
-    @wave_height1 = wave[0]
-    @wave_height1 = wave[1]
-    @wave_height1 = wave[2]
-    @wind1 = data[2]
-    @wind2 = data[5]
-    @wind3 = data[8]
-    @weather1 = data[9]
-    @weather1 = data[11]
-    @weather1 = data[13]
-    @weather_temp = data[10].gsub(/\u00B0/, "")
-    @weather_temp = data[12].gsub(/\u00B0/, "")
-    @weather_temp = data[14].gsub(/\u00B0/, "")
+    self.date = []
+    self.date << data[0]
+    self.date << data[3]
+    self.date << data[6]
+
+    self.wind = []
+    self.wind << data[2]
+    self.wind << data[5]
+    self.wind << data[8]
+    self.weather = []
+    self.weather << data[9]
+    self.weather << data[11]
+    self.weather << data[13]
+    self.weather_temp = []
+    self.weather_temp = data[10].gsub(/\u00B0/, "")
+    self.weather_temp = data[12].gsub(/\u00B0/, "")
+    self.weather_temp = data[14].gsub(/\u00B0/, "")
   end
 
   def self.broward_miami_dade
