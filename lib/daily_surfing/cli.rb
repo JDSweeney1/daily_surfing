@@ -49,9 +49,25 @@ class Cli
  end
 
  def self.output_broward_miami_dade
-  report = Scraper.broward_miami_dade
+   report = Scraper.broward_miami_dade
    puts "#{report.name}"
-   puts "#{report.wave_height}"
+   puts "------------------------------------------------------------------------------------------------------------------"
+   puts "#{report.date[0]} | Wave height: #{report.wave_height[0]} | Condition: #{report.condition[0]} | Weather: #{report.weather[0]} - #{report.weather_temp[0]} |"
+   puts ""
+   puts "#{report.wind[0]}"
+   puts "------------------------------------------------------------------------------------------------------------------"
+   puts "------------------------------------------------------------------------------------------------------------------"
+   puts "#{report.date[1]} | Wave height: #{report.wave_height[1]} | Condition: #{report.condition[1]} | Weather: #{report.weather[1]} - #{report.weather_temp[1]} |"
+   puts ""
+   puts "#{report.wind[1]}"
+   puts "------------------------------------------------------------------------------------------------------------------"
+   puts "------------------------------------------------------------------------------------------------------------------"
+   puts "#{report.date[2]} | Wave height: #{report.wave_height[2]} | Condition: #{report.condition[2]} | Weather: #{report.weather[2]} - #{report.weather_temp[2]} |"
+   puts ""
+   puts "#{report.wind[2]}"
+   puts "------------------------------------------------------------------------------------------------------------------"
+  # puts "#{report.wave_height[0]}             |         #{report.wave_height[1]}         |         #{report.wave_height[2]}"
+   #puts "----------------------------------"
  end
 
  def self.output_palm_beach

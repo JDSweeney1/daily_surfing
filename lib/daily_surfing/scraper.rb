@@ -29,9 +29,9 @@ class Scraper
     self.weather << data[13]
 
     self.weather_temp = []
-    self.weather_temp = data[10].gsub(/\u00B0/, "")
-    self.weather_temp = data[12].gsub(/\u00B0/, "")
-    self.weather_temp = data[14].gsub(/\u00B0/, "")
+    self.weather_temp << data[10].gsub(/\u00B0/, "")
+    self.weather_temp << data[12].gsub(/\u00B0/, "")
+    self.weather_temp << data[14].gsub(/\u00B0/, "")
   end
 
   def self.broward_miami_dade

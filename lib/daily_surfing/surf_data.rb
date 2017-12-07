@@ -4,7 +4,7 @@ class Surf_Data
   def initialize(name = nil, date = nil, condition = nil, wave_height = nil, wind = nil, weather = nil, weather_temp = nil)
     @name = name
     @date = date
-    @conditipn = condition
+    @condition = condition
     @wave_height = wave_height
     @wind = wind
     @weather = weather
