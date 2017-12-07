@@ -42,7 +42,7 @@ class Cli
      else
        #have some sort of error message.
        #restart at top.
-       puts "here is wrong"
+       puts "I'm sorry, I didn't catch that. Please type all, 1, 2, 3, or 4"
      end
    end
 

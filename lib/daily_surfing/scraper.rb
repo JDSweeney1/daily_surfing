@@ -6,22 +6,14 @@ class Scraper
   include Attributes
 
   def initialize(url)
-    #html = File.read("url")
     surf_report = Nokogiri::HTML(open(url))
-    binding.pry
-    #binding.pry
-    #fake surf_data
-    #date: surf_report.css("div.day-slider-container div div span").first.text
-    data = surf_report.css("div.day-slider-container div div span").collect{|t| t.text}.delete_if{|k| k.include?("Kurt")}
-    #data[0] = first day  data[1] = brief description data[2] = wind description
-    #data[3] = second day data[4] = brief description data[5] = wind description
-    #data[6] = third day  data[7] = brief description data[8] = wind description
-    #data[9] = first day weather data[10].gesub('\u00B0', "") = first day temp
 
     self.condition = surf_report.css("div.day-slider-container div div strong").collect{|w| w.text}
 
     self.wave_height = surf_report.css("div.day-slider-container h1").collect{|h| h.text}
 
+
+    data = surf_report.css("div.day-slider-container div div span").collect{|t| t.text}.delete_if{|k| k.include?("Kurt")}
     self.date = []
     self.date << data[0]
     self.date << data[3]
