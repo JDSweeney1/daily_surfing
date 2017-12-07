@@ -17,16 +17,12 @@ class Cli
        self.all
      elsif input == "1"
        self.output_north_florida
-       self.start_over?
      elsif input == "2"
         self.output_cental_florida
-        self.start_over?
      elsif input == "3"
        self.output_palm_beach
-       self.start_over?
     elsif input == "4"
        self.output_broward_miami_dade
-       self.start_over?
      elsif input == "exit"
        puts ""
        puts ""
@@ -42,21 +38,25 @@ class Cli
  def self.output_broward_miami_dade
    report = Scraper.broward_miami_dade
    self.cli_outline(report)
+   self.start_over?
  end
 
  def self.output_palm_beach
    report = Scraper.palm_beach
    self.cli_outline(report)
+   self.start_over?
  end
 
  def self.output_cental_florida
    report = Scraper.cental_florida
    self.cli_outline(report)
+   self.start_over?
  end
 
  def self.output_north_florida
    report = Scraper.north_florida
    self.cli_outline(report)
+   self.start_over?
  end
 
  def self.cli_outline(report)
@@ -81,7 +81,7 @@ class Cli
  def self.start_over?
    puts "Would you like to go back to the main menu? (Yes/No)"
    input = gets.upcase.strip
-   if input == "NO" || "EXIT"
+   if input == ("NO" || "EXIT")
      puts ""
      puts ""
      puts "Thank you, please come again!"
