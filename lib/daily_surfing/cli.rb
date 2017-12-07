@@ -22,21 +22,38 @@ class Cli
      if input == "all"
        self.output_north_florida
        puts ""
+       puts ""
        self.output_cental_florida
+       puts ""
        puts ""
        self.output_palm_beach
        puts ""
+       puts ""
        self.output_broward_miami_dade
        puts ""
+       puts ""
+       self.start_over?
        #will have an ask feature that asks if they want to go back to main menu or exit
      elsif input == "1"
        self.output_north_florida
+       puts ""
+       puts ""
+       self.start_over?
      elsif input == "2"
         self.output_cental_florida
+        puts ""
+        puts ""
+        self.start_over?
      elsif input == "3"
        self.output_palm_beach
+       puts ""
+       puts ""
+       self.start_over?
     elsif input == "4"
        self.output_broward_miami_dade
+       puts ""
+       puts ""
+       self.start_over?
      elsif input == "exit"
        exit
      else
@@ -50,41 +67,46 @@ class Cli
 
  def self.output_broward_miami_dade
    report = Scraper.broward_miami_dade
-   puts "#{report.name}"
-   puts "------------------------------------------------------------------------------------------------------------------"
-   puts "#{report.date[0]} | Wave height: #{report.wave_height[0]} | Condition: #{report.condition[0]} | Weather: #{report.weather[0]} - #{report.weather_temp[0]} |"
-   puts ""
-   puts "#{report.wind[0]}"
-   puts "------------------------------------------------------------------------------------------------------------------"
-   puts "------------------------------------------------------------------------------------------------------------------"
-   puts "#{report.date[1]} | Wave height: #{report.wave_height[1]} | Condition: #{report.condition[1]} | Weather: #{report.weather[1]} - #{report.weather_temp[1]} |"
-   puts ""
-   puts "#{report.wind[1]}"
-   puts "------------------------------------------------------------------------------------------------------------------"
-   puts "------------------------------------------------------------------------------------------------------------------"
-   puts "#{report.date[2]} | Wave height: #{report.wave_height[2]} | Condition: #{report.condition[2]} | Weather: #{report.weather[2]} - #{report.weather_temp[2]} |"
-   puts ""
-   puts "#{report.wind[2]}"
-   puts "------------------------------------------------------------------------------------------------------------------"
-  # puts "#{report.wave_height[0]}             |         #{report.wave_height[1]}         |         #{report.wave_height[2]}"
-   #puts "----------------------------------"
+   self.cli_outline(report)
  end
 
  def self.output_palm_beach
-  report = Scraper.palm_beach
-   puts "#{report.name}"
-   puts "#{report.wave_height}"
+   report = Scraper.palm_beach
+   self.cli_outline(report)
  end
 
  def self.output_cental_florida
-  report = Scraper.cental_florida
-   puts "#{report.name}"
-   puts "#{report.wave_height}"
+   report = Scraper.cental_florida
+   self.cli_outline(report)
  end
 
  def self.output_north_florida
-  report = Scraper.north_florida
+   report = Scraper.north_florida
+   self.cli_outline(report)
+ end
+
+ def self.cli_outline(report)
    puts "#{report.name}"
-   puts "#{report.wave_height}"
+   puts "------------------------------------------------------------------------------------------------------------------"
+   puts "#{report.date[0]} | Wave height: #{report.wave_height[0]} | Surfing Conditions: #{report.condition[0]} | Weather: #{report.weather[0]} - #{report.weather_temp[0]} |"
+   puts ""
+   puts "#{report.wind[0]}"
+   puts "------------------------------------------------------------------------------------------------------------------"
+   puts "#{report.date[1]} | Wave height: #{report.wave_height[1]} | Surfing Conditions: #{report.condition[1]} | Weather: #{report.weather[1]} - #{report.weather_temp[1]} |"
+   puts ""
+   puts "#{report.wind[1]}"
+   puts "------------------------------------------------------------------------------------------------------------------"
+   puts "#{report.date[2]} | Wave height: #{report.wave_height[2]} | Surfing Conditions: #{report.condition[2]} | Weather: #{report.weather[2]} - #{report.weather_temp[2]} |"
+   puts ""
+   puts "#{report.wind[2]}"
+   puts "------------------------------------------------------------------------------------------------------------------"
+ end
+
+ def self.start_over?
+   puts "Would you like to go back to the main menu? (Yes/No)"
+   input = gets.upcase.strip
+   if input == "NO"
+     exit
+   end
  end
 end
