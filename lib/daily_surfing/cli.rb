@@ -21,38 +21,21 @@ class Cli
      input = gets.strip
      if input == "all"
        self.output_north_florida
-       puts ""
-       puts ""
        self.output_cental_florida
-       puts ""
-       puts ""
        self.output_palm_beach
-       puts ""
-       puts ""
        self.output_broward_miami_dade
-       puts ""
-       puts ""
        self.start_over?
-       #will have an ask feature that asks if they want to go back to main menu or exit
      elsif input == "1"
        self.output_north_florida
-       puts ""
-       puts ""
        self.start_over?
      elsif input == "2"
         self.output_cental_florida
-        puts ""
-        puts ""
         self.start_over?
      elsif input == "3"
        self.output_palm_beach
-       puts ""
-       puts ""
        self.start_over?
     elsif input == "4"
        self.output_broward_miami_dade
-       puts ""
-       puts ""
        self.start_over?
      elsif input == "exit"
        puts ""
@@ -103,12 +86,14 @@ class Cli
    puts ""
    puts "#{report.wind[2]}"
    puts "------------------------------------------------------------------------------------------------------------------"
+   puts ""
+   puts ""
  end
 
  def self.start_over?
    puts "Would you like to go back to the main menu? (Yes/No)"
    input = gets.upcase.strip
-   if input == "NO"
+   if input == "NO" || "EXIT"
      puts ""
      puts ""
      puts "Thank you, please come again!"
