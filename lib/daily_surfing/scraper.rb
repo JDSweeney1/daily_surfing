@@ -1,7 +1,3 @@
-require 'open-uri'
-require 'pry'
-require 'nokogiri'
-
 class Scraper
   include Attributes
 
@@ -21,7 +17,6 @@ class Scraper
                          data[12].gsub(/\u00B0/, ""),
                          data[14].gsub(/\u00B0/, "")
                        ]
-
   end
 
   def self.broward_miami_dade

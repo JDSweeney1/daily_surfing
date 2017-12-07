@@ -55,6 +55,9 @@ class Cli
        puts ""
        self.start_over?
      elsif input == "exit"
+       puts ""
+       puts ""
+       puts "Thank you, please come again!"
        exit
      else
        #have some sort of error message.
@@ -106,6 +109,9 @@ class Cli
    puts "Would you like to go back to the main menu? (Yes/No)"
    input = gets.upcase.strip
    if input == "NO"
+     puts ""
+     puts ""
+     puts "Thank you, please come again!"
      exit
    end
  end
