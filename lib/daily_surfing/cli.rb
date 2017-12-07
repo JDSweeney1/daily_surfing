@@ -1,12 +1,6 @@
 class Cli
 
   def self.run
-    #this is what will be used to run the the Cli
-    #it will give options to choose which region, then provide future
-    # 1. Region swell height 2. Future date 3. Surf condition(poor - good)
-    # 4. A brief description of wind 5. weather for that day and region
-
-    #you will also be able to select individual attributes for each region
     puts "welcome to Daily Surfing!"
 
     loop do
@@ -20,11 +14,7 @@ class Cli
       puts "         -----Type 'exit' to exit-----"
      input = gets.strip
      if input == "all"
-       self.output_north_florida
-       self.output_cental_florida
-       self.output_palm_beach
-       self.output_broward_miami_dade
-       self.start_over?
+       self.all
      elsif input == "1"
        self.output_north_florida
        self.start_over?
@@ -43,8 +33,6 @@ class Cli
        puts "Thank you, please come again!"
        exit
      else
-       #have some sort of error message.
-       #restart at top.
        puts "I'm sorry, I didn't catch that. Please type all, 1, 2, 3, or 4"
      end
    end
@@ -99,5 +87,13 @@ class Cli
      puts "Thank you, please come again!"
      exit
    end
+ end
+
+ def self.all
+   self.output_north_florida
+   self.output_cental_florida
+   self.output_palm_beach
+   self.output_broward_miami_dade
+   self.start_over?
  end
 end
