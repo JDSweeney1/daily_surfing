@@ -13,25 +13,15 @@ class Scraper
     self.wave_height = surf_report.css("div.day-slider-container h1").collect{|h| h.text}
 
     data = surf_report.css("div.day-slider-container div div span").collect{|t| t.text}.delete_if{|k| k.include?("Kurt")}
-    self.date = []
-    self.date << data[0]
-    self.date << data[3]
-    self.date << data[6]
+    self.date = [data[0], data[3], data[6]]
+    self.wind = [data[2], data[5], data[8]]
+    self.weather = [data[9], data[11], data[13]]
+    self.weather_temp = [
+                         data[10].gsub(/\u00B0/, ""),
+                         data[12].gsub(/\u00B0/, ""),
+                         data[14].gsub(/\u00B0/, "")
+                       ]
 
-    self.wind = []
-    self.wind << data[2]
-    self.wind << data[5]
-    self.wind << data[8]
-
-    self.weather = []
-    self.weather << data[9]
-    self.weather << data[11]
-    self.weather << data[13]
-
-    self.weather_temp = []
-    self.weather_temp << data[10].gsub(/\u00B0/, "")
-    self.weather_temp << data[12].gsub(/\u00B0/, "")
-    self.weather_temp << data[14].gsub(/\u00B0/, "")
   end
 
   def self.broward_miami_dade
