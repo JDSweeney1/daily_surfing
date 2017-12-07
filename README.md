@@ -1,8 +1,6 @@
 # DailySurfing
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/daily_surfing`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Welcome to the daily_surfing gem! This gem is designed for surfing enthusiasts who do not want to waste their time finding quick surfing forecasts for Florida's East Coast. Just run this gem and you can get an up-to-date 3-day forecast of the entire coast, or select one of four regions (North Florida, Central Florida, Palm Beach area or the Broward/Miami/Dade area). This will give you enough information to determine when and where your next surf will be.
 
 ## Installation
 
@@ -22,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Run: daily_surfing after installing the gem.
 
 ## Development
 
@@ -32,4 +30,8 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/daily_surfing.
+Bug reports and pull requests are welcome on GitHub at https://github.com/JDSweeney1/daily_surfing.
+
+## License
+
+The gem is available as open source under the terms of the MIT License.

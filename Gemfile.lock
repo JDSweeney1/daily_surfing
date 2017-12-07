@@ -27,6 +27,7 @@ DEPENDENCIES
   daily_surfing!
   pry
   rake (~> 10.0)
+  Nokogiri
 
 BUNDLED WITH
    1.16.0
