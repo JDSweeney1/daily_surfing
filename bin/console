@@ -10,7 +10,7 @@ require_relative '../config/environment'
 # require "pry"
 # Pry.start
 
-Cli.run
+Scraper.new("http://www.surfline.com/surf-forecasts/florida/broward---miami-dade_121124/")
 
 require "irb"
 IRB.start(__FILE__)
