@@ -19,25 +19,9 @@ class Scraper
     #data[9] = first day weather data[10].gesub('\u00B0', "") = first day temp
 
     self.condition = surf_report.css("div.day-slider-container div div strong").collect{|w| w.text}
-    #condition[0] = day 1 condition[1] = day 2 condition[2] = day 3
+
     self.wave_height = surf_report.css("div.day-slider-container h1").collect{|h| h.text}
-=begin
-    ["Wednesday - 12/06",
- "ankle to knee high",
- "Small SE windswell with SE winds.  ",
- "Thursday - 12/07",
- "Flat",
- "Minimal windswell traces. Light winds.  ",
- "Friday - 12/08",
- "Flat",
- "Minimal traces. Light winds.  ",
- "scattered showers",
- "71-83\u00B0 F",
- "sunny",
- "70-83\u00B0 F",
- "scattered showers",
- "71-82\u00B0 F"]
-=end
+
     self.date = []
     self.date << data[0]
     self.date << data[3]
@@ -47,10 +31,12 @@ class Scraper
     self.wind << data[2]
     self.wind << data[5]
     self.wind << data[8]
+
     self.weather = []
     self.weather << data[9]
     self.weather << data[11]
     self.weather << data[13]
+
     self.weather_temp = []
     self.weather_temp = data[10].gsub(/\u00B0/, "")
     self.weather_temp = data[12].gsub(/\u00B0/, "")
@@ -58,30 +44,22 @@ class Scraper
   end
 
   def self.broward_miami_dade
-    #I want this to scrape one of four pages, each used for a different region.
     scraper = self.new("http://www.surfline.com/surf-forecasts/florida/broward---miami-dade_121124/")
-    Surf_Data.new(scraper.name, scraper.date, scraper.condition, scraper.wave_height, scraper.wind, scraper.weather)
-
+    Surf_Data.new("Broward/Miami/Dade", scraper.date, scraper.condition, scraper.wave_height, scraper.wind, scraper.weather, scrape.weather_temp)
   end
 
   def self.palm_beach
-    #I want this to scrape one of four pages, each used for a different region.
-    scraper = self.new("url")
-    Surf_Data.new(scraper.name, scraper.date, scraper.condition, scraper.wave_height, scraper.wind, scraper.weather)
-
+    scraper = self.new("http://www.surfline.com/surf-forecasts/florida/treasure-coast---palm-beach_2155/")
+    Surf_Data.new("Palm Beach", scraper.date, scraper.condition, scraper.wave_height, scraper.wind, scraper.weather, scrape.weather_temp)
   end
 
   def self.cental_florida
-    #I want this to scrape one of four pages, each used for a different region.
-    scraper = self.new("url")
-    Surf_Data.new(scraper.name, scraper.date, scraper.condition, scraper.wave_height, scraper.wind, scraper.weather)
-
+    scraper = self.new("http://www.surfline.com/surf-forecasts/florida/central-florida_2154/")
+    Surf_Data.new("Central Florida", scraper.date, scraper.condition, scraper.wave_height, scraper.wind, scraper.weather, scrape.weather_temp)
   end
 
   def self.north_florida
-    #I want this to scrape one of four pages, each used for a different region.
-    scraper = self.new("url")
-    Surf_Data.new(scraper.name, scraper.date, scraper.condition, scraper.wave_height, scraper.wind, scraper.weather)
-
+    scraper = self.new("http://www.surfline.com/surf-forecasts/florida/north-florida_2153/")
+    Surf_Data.new("North Florida", scraper.date, scraper.condition, scraper.wave_height, scraper.wind, scraper.weather, scrape.weather_temp)
   end
 end
