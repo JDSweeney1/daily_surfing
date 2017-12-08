@@ -19,8 +19,8 @@ class Cli
        self.output_north_florida
        self.start_over?
      elsif input == "2"
-        self.output_cental_florida
-        self.start_over?
+       self.output_cental_florida
+       self.start_over?
      elsif input == "3"
        self.output_palm_beach
        self.start_over?
