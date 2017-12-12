@@ -4,6 +4,8 @@ class Scraper
   def initialize(url)
     surf_report = Nokogiri::HTML(open(url))
 
+
+
     self.condition = surf_report.css("div.day-slider-container div div strong").collect{|c| c.text}
     self.wave_height = surf_report.css("div.day-slider-container h1").collect{|h| h.text}
     # All information in the data array use "span" with no identifying attributes, therefore array indecies were used to sort them out.
@@ -28,7 +30,7 @@ class Scraper
     Surf_Data.new("Palm Beach", scraper.date, scraper.condition, scraper.wave_height, scraper.wind, scraper.weather, scraper.weather_temp)
   end
 
-  def self.cental_florida
+  def self.central_florida
     scraper = self.new("http://www.surfline.com/surf-forecasts/florida/central-florida_2154/")
     Surf_Data.new("Central Florida", scraper.date, scraper.condition, scraper.wave_height, scraper.wind, scraper.weather, scraper.weather_temp)
   end

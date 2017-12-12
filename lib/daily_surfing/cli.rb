@@ -6,26 +6,24 @@ class Cli
     loop do
       puts ""
       puts "Get your 3 day forecast for the entire east coast of Florida by typing 'all'"
-      puts "Or select one of four regions using their corresponding number.
-       1. North Florida
-       2. Central Florida
-       3. Treasure Coast - Palm Beach
-       4. Broward - Miami Dade"
+      puts "Or select one of four regions using their corresponding number."
+      self.display
       puts "         -----Type 'exit' to exit-----"
      input = gets.strip
      if input == "all"
-       self.all
+       self.all(["north_florida", "central_florida", "palm_beach", "broward_miami_dade"])
      elsif input == "1"
-       self.output_north_florida
+      # self.output_north_florida
+       self.output("north_florida")
        self.start_over?
      elsif input == "2"
-       self.output_cental_florida
+       self.output("central_florida")
        self.start_over?
      elsif input == "3"
-       self.output_palm_beach
+       self.output("palm_beach")
        self.start_over?
     elsif input == "4"
-       self.output_broward_miami_dade
+       self.output("broward_miami_dade")
        self.start_over?
      elsif input == "exit"
        puts ""
@@ -38,24 +36,9 @@ class Cli
    end
  end
 
- def self.output_broward_miami_dade
-   report = Scraper.broward_miami_dade
-   self.cli_outline(report)
- end
-
- def self.output_palm_beach
-   report = Scraper.palm_beach
-   self.cli_outline(report)
- end
-
- def self.output_cental_florida
-   report = Scraper.cental_florida
-   self.cli_outline(report)
- end
-
- def self.output_north_florida
-   report = Scraper.north_florida
-   self.cli_outline(report)
+ def self.output(variable)
+   report = Scraper.send variable
+    self.cli_outline(report)
  end
 
  def self.cli_outline(report)
@@ -88,11 +71,16 @@ class Cli
    end
  end
 
- def self.all
-   self.output_north_florida
-   self.output_cental_florida
-   self.output_palm_beach
-   self.output_broward_miami_dade
+ def self.all(variable)
+   variable.each do |name|
+     report = Scraper.send name
+     self.cli_outline(report)
+   end
    self.start_over?
+ end
+
+ def self.display
+   names = ["North Florida", "Central Florida", "Palm Beach", "Broward - Miami Dade"]
+   names.each.with_index(1) {|n, i| puts "#{i}. #{n}"}
  end
 end
